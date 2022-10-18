@@ -25,7 +25,7 @@ public class RaicesServicio {
 
     public Boolean tieneRaices() {
 
-        return resultado > 0;
+        return resultado >= 0;
 
     }
 
@@ -37,14 +37,16 @@ public class RaicesServicio {
 
     public void obtenerRaices(Raices a, Raices b, Raices c) {
 
-        if (this.tieneRaices() == true) {
+        if (this.tieneRaices()) {
 
             System.out.println("El valor de la discriminante es " + (Math.pow(b.getB(), 2) - 4 * a.getA() * c.getC()));
 
             System.out.print("El prmier resultado es ");
-            System.out.println((-b.getB() + Math.sqrt(Math.pow(b.getB(), 2) - 4 * a.getA() * c.getC())) / (2 * a.getA()));
+            System.out.println((-b.getB() + Math.sqrt(this.Discriminante(a, b, c))) / (2 * a.getA()));
+//            System.out.println((-b.getB() + Math.sqrt(Math.pow(b.getB(), 2) - 4 * a.getA() * c.getC())) / (2 * a.getA()));
             System.out.print("El segundo resultado es ");
-            System.out.println((-b.getB() - Math.sqrt(Math.pow(b.getB(), 2) - 4 * a.getA() * c.getC())) / (2 * a.getA()));
+            System.out.println((-b.getB() - Math.sqrt(this.Discriminante(a, b, c))) / (2 * a.getA()));
+//            System.out.println((-b.getB() - Math.sqrt(Math.pow(b.getB(), 2) - 4 * a.getA() * c.getC())) / (2 * a.getA()));
 
         } else {
 
@@ -55,13 +57,21 @@ public class RaicesServicio {
 
     public void obtenerRaiz(Raices a, Raices b, Raices c) {
 
-        if (this.tieneRaiz() == true) {
+        if (this.tieneRaiz()) {
 
             System.out.print("EL unico valor posible es ");
             System.out.println((-b.getB() - Math.sqrt(0)) / (2 * a.getA()));
 
         }
 
+    }
+    
+    public void calcular(Raices a, Raices b, Raices c){
+        
+        this.obtenerRaices(a, b, c);
+        this.obtenerRaiz(a, b, c);
+        
+        
     }
     
     

@@ -63,9 +63,7 @@ public class Guia7POOEjex3 {
 
         }
         
-        rs.obtenerRaices(obj1, obj1, obj1);
-        
-        rs.obtenerRaiz(obj1, obj1, obj1);
+       rs.calcular(obj1, obj1, obj1);
         
         
                 
